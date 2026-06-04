@@ -3,7 +3,7 @@
 #include "display.hpp"
 
 int main() {
-  PhoneBook   phonebook;
+  PhoneBook phonebook;
   std::string command;
 
   while (true) {

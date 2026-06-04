@@ -22,7 +22,7 @@ namespace display {
     std::cout << line << std::endl << str << std::endl << line << std::endl;
   }
 
-  std::string PromptForField(const std::string& field) {
+  std::string ReadInput(const std::string& field) {
     std::string value = "";
     while (value.empty()) {
       std::cout << field << ": ";
