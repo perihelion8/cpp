@@ -3,26 +3,24 @@
 #include "display.hpp"
 
 int main() {
-    PhoneBook   phonebook;
-    std::string command;
+  PhoneBook   phonebook;
+  std::string command;
 
-    while (true) {
-      std::cout << "> ";
-      if (!(std::cin >> command)) {
+  while (true) {
+    std::cout << "> ";
+    if (!(std::getline(std::cin, command))) {
 
-        break;
-      } 
-      if (command == "ADD") {
-          phonebook.AddContact(); 
-      } else if (command == "SEARCH") {
-          phonebook.SearchContacts();
-      } else if (command == "EXIT") {
-          display::DisplayBox("Goodbye!");
-        break ;
-      }
-      else {
-        std::cout << "Invalid command. Please use ADD, SEARCH, or EXIT." << std::endl;
-      }
+      break;
     }
-	return (0);
+    else if (command == "ADD") {
+        phonebook.AddContact(); 
+    } else if (command == "SEARCH") {
+        phonebook.SearchContacts();
+    } else if (command == "EXIT") {
+        display::DisplayBox("Goodbye!");
+      break ;
+    } else
+        std::cout << "Invalid command. Please use ADD, SEARCH, or EXIT." << std::endl;
+    }
+  return 0;
 }

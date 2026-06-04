@@ -7,7 +7,7 @@ namespace display {
 
   void DisplayRow(const std::string row[]);
   void DisplayBox(const std::string& str);
-  std::string DisplayForAdd(const std::string & str);
+  std::string PromptForField(const std::string & str);
   
 }
 

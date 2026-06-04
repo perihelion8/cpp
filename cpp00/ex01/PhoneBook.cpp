@@ -8,11 +8,11 @@ PhoneBook::PhoneBook() {
 }
 
 void PhoneBook::AddContact() {
-  contacts_[index_].set_first_name(display::DisplayForAdd("first name"));
-  contacts_[index_].set_last_name(display::DisplayForAdd("last name"));
-  contacts_[index_].set_nick_name(display::DisplayForAdd("nick name"));
-  contacts_[index_].set_phone_number(display::DisplayForAdd("phone number"));
-  contacts_[index_].set_dark_secret(display::DisplayForAdd("dark secret"));
+  contacts_[index_].set_firstname(display::PromptForField("firstname"));
+  contacts_[index_].set_lastname(display::PromptForField("lastname"));
+  contacts_[index_].set_nickname(display::PromptForField("nickname"));
+  contacts_[index_].set_phonenumber(display::PromptForField("phonenumber"));
+  contacts_[index_].set_darksecret(display::PromptForField("darksecret"));
   index_ = (index_ + 1) % kContactsSize_;
   if (is_full_ == false && index_ == 0) is_full_ = true;
 }
@@ -23,37 +23,32 @@ void PhoneBook::SearchContacts() {
     return;
   }
   DisplayContacts();
-  std::cout << "Enter index: ";
-  std::string input;
-  if (!(std::cin >> input) || input.size() != 1 ||
-      input[0] < '0' || input[0] >= '0' + index_) {
-    std::cout << "Invalid index." << std::endl;
-    return;
-  }
+  std::string input = display::PromptForField("Enter Index");
   DisplayContact(input[0] - '0');
+  return;
 }
 
 void PhoneBook::DisplayContacts() {
   std::string row[kTableFields_ + 1];
   row[0] = "index"; 
-  row[1] = "first name";
-  row[2] = "last name";
-  row[3] = "nick name";
+  row[1] = "firstname";
+  row[2] = "lastname";
+  row[3] = "nickname";
   display::DisplayRow(row);
   int count = is_full_ ? kContactsSize_ : index_;
   for (int i = 0; i < count; ++i) {
     row[0] = std::string(1, char('0' + i));
-    row[1] = contacts_[i].first_name();
-    row[2] = contacts_[i].last_name();
-    row[3] = contacts_[i].nick_name();
+    row[1] = contacts_[i].firstname();
+    row[2] = contacts_[i].lastname();
+    row[3] = contacts_[i].nickname();
     display::DisplayRow(row);
   }
 }
 
 void PhoneBook::DisplayContact(int index) {
-  std::cout << "first name: " << contacts_[index].first_name() << std::endl;
-  std::cout << "last name: " << contacts_[index].last_name() << std::endl;
-  std::cout << "nick name: " << contacts_[index].nick_name() << std::endl;
-  std::cout << "phone number: " << contacts_[index].phone_number() << std::endl;
-  std::cout << "dark secret: " << contacts_[index].dark_secret() << std::endl;
+  std::cout << "firstname: " << contacts_[index].firstname() << std::endl;
+  std::cout << "lastname: " << contacts_[index].lastname() << std::endl;
+  std::cout << "nickname: " << contacts_[index].nickname() << std::endl;
+  std::cout << "phonenumber: " << contacts_[index].phonenumber() << std::endl;
+  std::cout << "dark secret: " << contacts_[index].darksecret() << std::endl;
 }

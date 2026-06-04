@@ -1,6 +1,7 @@
 #include "display.hpp"
 #include <iostream>
 #include <iomanip>
+#include <limits>
 
 namespace display {
 
@@ -21,10 +22,12 @@ namespace display {
     std::cout << line << std::endl << str << std::endl << line << std::endl;
   }
 
-  std::string DisplayForAdd(const std::string& field) {
-    std::string value;
-    std::cout << field << ": ";
-    std::getline(std::cin >> std::ws, value); 
+  std::string PromptForField(const std::string& field) {
+    std::string value = "";
+    while (value.empty()) {
+      std::cout << field << ": ";
+      std::getline(std::cin, value); 
+    }
     return value;
   }
 

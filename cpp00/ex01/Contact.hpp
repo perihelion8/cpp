@@ -4,22 +4,22 @@
 
 class Contact {
  public:
-   const std::string& first_name();
-   const std::string& last_name();
-   const std::string& nick_name();
-   const std::string& phone_number();
-   const std::string& dark_secret();
+   const std::string& firstname();
+   const std::string& lastname();
+   const std::string& nickname();
+   const std::string& phonenumber();
+   const std::string& darksecret();
 
-   void set_first_name(const std::string& first_name);
-   void set_last_name(const std::string& last_name);
-   void set_nick_name(const std::string& nick_name);
-   void set_phone_number(const std::string& phone_number);
-   void set_dark_secret(const std::string& dark_secret);
+   void set_firstname(const std::string& firstname);
+   void set_lastname(const std::string& lastname);
+   void set_nickname(const std::string& nickname);
+   void set_phonenumber(const std::string& phonenumber);
+   void set_darksecret(const std::string& darksecret);
 
  private:
-  std::string first_name_;
-  std::string last_name_;
-  std::string nick_name_;
-  std::string phone_number_;
-  std::string dark_secret_;
+  std::string firstname_;
+  std::string lastname_;
+  std::string nickname_;
+  std::string phonenumber_;
+  std::string darksecret_;
 };
