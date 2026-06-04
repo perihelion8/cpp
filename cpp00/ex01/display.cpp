@@ -1,8 +1,6 @@
 #include "display.hpp"
 #include <iostream>
 #include <iomanip>
-#include <vector>
-#include <sstream>
 
 namespace display {
 
@@ -19,26 +17,15 @@ namespace display {
   }
 
   void DisplayBox(const std::string& str) {
-    std::vector<std::string> lines;
-    std::istringstream iss(str);
-    std::string line;
-    while (std::getline(iss, line)) lines.push_back(line);
-    if (lines.empty()) lines.push_back("");
+    std::string line = "-----------------------";
+    std::cout << line << std::endl << str << std::endl << line << std::endl;
+  }
 
-    std::size_t maxlen = 0;
-    for (std::size_t i = 0; i < lines.size(); ++i)
-      if (lines[i].length() > maxlen) maxlen = lines[i].length();
-
-    const std::size_t padding = 2;
-    std::string border = "+" + std::string(maxlen + padding * 2, '-') + "+";
-
-    std::cout << border << std::endl;
-    for (std::size_t i = 0; i < lines.size(); ++i) {
-      std::string s = lines[i];
-      std::size_t right = maxlen - s.length();
-      std::cout << "|" << std::string(padding, ' ') << s << std::string(right + padding, ' ') << "|" << std::endl;
-    }
-    std::cout << border << std::endl;
+  std::string DisplayForAdd(const std::string& field) {
+    std::string value;
+    std::cout << field << ": ";
+    std::getline(std::cin >> std::ws, value); 
+    return value;
   }
 
 }

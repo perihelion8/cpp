@@ -13,12 +13,12 @@ class PhoneBook {
   void SearchContacts();
 
  private:
-  static const int kMaxContacts_ = 8;
+  static const int kContactsSize_ = 8;
   static const int kTableFields_ = 3;
 
-  Contact contacts_[kMaxContacts_];
-  int index_;
-  bool is_full_;
+  Contact   contacts_[kContactsSize_];
+  int       index_;
+  bool      is_full_;
 
   void  DisplayContacts();
   void  DisplayContact(int index);
