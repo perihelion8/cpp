@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
+#include "validate.hpp"
 
 namespace display {
 
@@ -24,7 +25,7 @@ namespace display {
 
   std::string ReadInput(const std::string& field) {
     std::string value = "";
-    while (value.empty()) {
+    while (IsNotEmpty(value)) {
       std::cout << field << ": ";
       std::getline(std::cin, value); 
     }

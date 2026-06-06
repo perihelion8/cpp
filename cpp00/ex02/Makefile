@@ -1,5 +1,5 @@
-NAME	:= job
-CXX		:= c++
+NAME			:= job
+CXX				:= c++
 CXXFLAGS	:= -Wall -Werror -Wextra -std=c++98
 SRC				:= Account.cpp tests.cpp
 OBJ				:= $(SRC:.cpp=.o)
