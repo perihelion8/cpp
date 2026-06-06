@@ -8,13 +8,13 @@ PhoneBook::PhoneBook() {
 }
 
 void PhoneBook::AddContact() {
-  contacts_[index_].set_firstname(display::ReadInput("firstname"));
-  contacts_[index_].set_lastname(display::ReadInput("lastname"));
-  contacts_[index_].set_nickname(display::ReadInput("nickname"));
-  contacts_[index_].set_phonenumber(display::ReadInput("phonenumber"));
-  contacts_[index_].set_darksecret(display::ReadInput("darksecret"));
+  contacts_[index_].set_firstname(display::ReadName("firstname"));
+  contacts_[index_].set_lastname(display::ReadName("lastname"));
+  contacts_[index_].set_nickname(display::ReadName("nickname"));
+  contacts_[index_].set_phonenumber(display::ReadPhonenumber());
+  contacts_[index_].set_darksecret(display::ReadDarkSecret());
+  if (index_ == kContactsSize_) is_full_ = true;
   index_ = (index_ + 1) % kContactsSize_;
-  if (is_full_ == false && index_ == 0) is_full_ = true;
 }
 
 void PhoneBook::SearchContacts() {
@@ -24,7 +24,10 @@ void PhoneBook::SearchContacts() {
   }
   DisplayContacts();
   std::string input = display::ReadInput("Enter Index");
-  DisplayContact(input[0] - '0');
+  if (input.length() > 1) return;
+  int i = static_cast<unsigned char>(input[0] - '0'); 
+  if (i >= kContactsSize_) return;
+  DisplayContact(i);
   return;
 }
 

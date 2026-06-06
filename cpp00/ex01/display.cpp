@@ -1,7 +1,6 @@
 #include "display.hpp"
 #include <iostream>
 #include <iomanip>
-#include <limits>
 #include "validate.hpp"
 
 namespace display {
@@ -25,11 +24,38 @@ namespace display {
 
   std::string ReadInput(const std::string& field) {
     std::string value = "";
-    while (IsNotEmpty(value)) {
+    while (!validate::IsNotEmpty(value)) {
       std::cout << field << ": ";
       std::getline(std::cin, value); 
     }
     return value;
+  }
+
+  std::string ReadName(const std::string& field_name) {
+    std::string input = ReadInput(field_name);
+    while (!validate::IsValidName(input)) {
+      std::cout << "\nName must not exceed 20 characters, and may only contain alphabetic characters.\n" << std::endl;
+      input = ReadInput(field_name);
+    }
+    return input;
+  }
+
+  std::string ReadPhonenumber() {
+    std::string input = ReadInput("phonenumber");
+    while (!validate::IsValidPhonenumber(input)) {
+      std::cout << "\nInsert a valid phonenumber.\n" << std::endl;
+      input = ReadInput("phonenumber");
+    }
+    return input;
+  }
+
+  std::string ReadDarkSecret() {
+    std::string input = ReadInput("dark secret");
+    while (!validate::IsValidDarkSecret(input)) {
+      std::cout << "\nDark secret must not exceed 100 characters\n" << std::endl;
+      input = ReadInput("dark secret");
+    }
+    return input;
   }
 
 }
