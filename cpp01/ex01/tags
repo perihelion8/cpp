@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/abazzoun/cpp/cpp01/ex01/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+CXX	Makefile	/^CXX				:= c++$/;"	m
+NAME	Makefile	/^NAME			:= ex01$/;"	m
+OBJ	Makefile	/^OBJ				:= $(SRC:.cpp=.o)$/;"	m
+SRC	Makefile	/^SRC				:= Zombie.cpp \\$/;"	m
+ZOMBIE_HPP	Zombie.hpp	/^#define ZOMBIE_HPP$/;"	d
+Zombie	Zombie.hpp	/^class Zombie {$/;"	c
+all	Makefile	/^all: $(NAME)$/;"	t
+announce	Zombie.cpp	/^void Zombie::announce() {$/;"	f	class:Zombie	typeref:typename:void
+clean	Makefile	/^clean:$/;"	t
+fclean	Makefile	/^fclean: clean$/;"	t
+main	main.cpp	/^int main() {$/;"	f	typeref:typename:int
+name_	Zombie.hpp	/^  std::string name_;$/;"	m	class:Zombie	typeref:typename:std::string
+re	Makefile	/^re: fclean all$/;"	t
+set_name	Zombie.cpp	/^void Zombie::set_name(std::string name) { name_ = name; }$/;"	f	class:Zombie	typeref:typename:void
+zombieHorde	zombieHorde.cpp	/^Zombie* zombieHorde(int N, std::string name) {$/;"	f	typeref:typename:Zombie *
+~Zombie	Zombie.cpp	/^Zombie::~Zombie() {$/;"	f	class:Zombie

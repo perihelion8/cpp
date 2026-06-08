@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/abazzoun/cpp/cpp01/ex03/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+HUMANA_HPP	HumanA.hpp	/^#define HUMANA_HPP$/;"	d
+HUMANB_HPP	HumanB.hpp	/^#define HUMANB_HPP$/;"	d
+Human	HumanB.cpp	/^Human::Human(const std::string& name) {$/;"	f	class:Human
+HumanA	HumanA.cpp	/^HumanA(const std::string& name, Weapon& weapon) {$/;"	f
+HumanA	HumanA.hpp	/^class HumanA {$/;"	c
+HumanB	HumanB.hpp	/^class HumanB {$/;"	c
+WEAPON_HPP	Weapon.hpp	/^#define WEAPON_HPP$/;"	d
+Weapon	Weapon.hpp	/^class Weapon {$/;"	c
+attack	HumanA.cpp	/^void HumanA::attack() {$/;"	f	class:HumanA	typeref:typename:void
+getType	Weapon.cpp	/^const std::string& getType() { return type_; }$/;"	f	typeref:typename:const std::string &
+main	main.cpp	/^int main() {$/;"	f	typeref:typename:int
+name_	HumanA.hpp	/^  std::string name_;$/;"	m	class:HumanA	typeref:typename:std::string
+name_	HumanB.hpp	/^  std::string name_;$/;"	m	class:HumanB	typeref:typename:std::string
+setType	Weapon.cpp	/^void setType(const std::string& type) { type_ = type; }$/;"	f	typeref:typename:void
+type_	Weapon.hpp	/^   std::string type_;$/;"	m	class:Weapon	typeref:typename:std::string
+weapon_	HumanA.hpp	/^  Weapon& weapon_;$/;"	m	class:HumanA	typeref:typename:Weapon &
+weapon_	HumanB.hpp	/^  Weapon* weapon_;$/;"	m	class:HumanB	typeref:typename:Weapon *
