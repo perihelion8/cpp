@@ -5,18 +5,19 @@
 
 class Harl {
  public:
+  Harl();
   void complain(std::string level);
 
  private:
   typedef void (Harl::*Action)();
 
-  static const std::string kLevels_[4];
-  static const Harl::Action kActions_[4];
-
   void debug();
   void info();
   void warning();
   void error();
+
+  std::string levels_[4];
+  Harl::Action actions_[4];
 };
 
 #endif // HARL_HPP

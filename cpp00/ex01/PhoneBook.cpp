@@ -22,11 +22,13 @@ void PhoneBook::SearchContacts() {
     display::DisplayBox("Empty Contacts :(");
     return;
   }
+
   DisplayContacts();
-  std::string input = display::ReadInput("Enter Index");
-  if (input.length() > 1) return;
-  int i = static_cast<unsigned char>(input[0] - '0'); 
-  if (i >= kContactsSize_) return;
+  int i = display::ReadIndex();
+  if (i < 0 || (!is_full_ && i >= index_) || i >= kContactsSize_) {
+    std::cout << "Invalid index!" << std::endl;
+    return;
+  }
   DisplayContact(i);
   return;
 }

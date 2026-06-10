@@ -9,18 +9,20 @@ int main() {
   while (true) {
     std::cout << "> ";
     if (!(std::getline(std::cin, command))) {
-
+      std::cout << "\nEOF" << std::endl;
       break;
-    }
-    else if (command == "ADD") {
+    } else if (command == "ADD") {
         phonebook.AddContact(); 
     } else if (command == "SEARCH") {
         phonebook.SearchContacts();
     } else if (command == "EXIT") {
         display::DisplayBox("Goodbye!");
-      break ;
-    } else
-        std::cout << "Invalid command. Please use ADD, SEARCH, or EXIT." << std::endl;
+        break ;
+    } else {
+        std::cout << "Invalid command."
+                  << " Please use ADD, SEARCH, or EXIT."
+                  << std::endl;
     }
+  }
   return 0;
 }

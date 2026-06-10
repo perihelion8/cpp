@@ -3,7 +3,10 @@
 
 int main(int argc, char *argv[]) {
   if (argc != 4) {
-    std::cout << "The program takes 3 parameters in the following order: a filename and two strings, s1 and s2." << std::endl;
+    std::cout
+      << "The program takes 3 parameters in the following order"
+      << ": a filename and two strings, s1 and s2."
+      << std::endl;
     return 0;
   }
   std::string filename = argv[1], s1 = argv[2], s2 = argv[3];

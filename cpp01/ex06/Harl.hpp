@@ -5,6 +5,15 @@
 
 class Harl {
  public:
+  enum Level {
+    kDEBUG = 0,
+    kINFO,
+    kWARNING,
+    kERROR,
+    kUNKOWN
+  };
+
+  Harl();
   void complain(std::string level);
 
  private:
@@ -12,6 +21,8 @@ class Harl {
   void info();
   void warning();
   void error();
+
+  std::string levels_[4];
 };
 
 #endif // HARL_HPP

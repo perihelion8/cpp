@@ -1,0 +1,34 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/abazzoun/cpp/cpp01/ex05/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+%.o	Makefile	/^%.o: %.cpp$/;"	t
+Action	Harl.hpp	/^  typedef void (Harl::*Action)();$/;"	t	class:Harl	typeref:typename:void (Harl::*)()
+CXX	Makefile	/^CXX				:= c++$/;"	m
+HARL_HPP	Harl.hpp	/^#define HARL_HPP$/;"	d
+Harl	Harl.hpp	/^class Harl {$/;"	c
+NAME	Makefile	/^NAME			:= ex05$/;"	m
+OBJ	Makefile	/^OBJ				:= Harl.o main.o$/;"	m
+SRC	Makefile	/^SRC				:= Harl.cpp main.cpp$/;"	m
+all	Makefile	/^all: $(NAME)$/;"	t
+clean	Makefile	/^clean:$/;"	t
+complain	Harl.cpp	/^void Harl::complain(std::string level) {$/;"	f	class:Harl	typeref:typename:void
+debug	Harl.cpp	/^void Harl::debug() {$/;"	f	class:Harl	typeref:typename:void
+error	Harl.cpp	/^void Harl::error() {$/;"	f	class:Harl	typeref:typename:void
+fclean	Makefile	/^fclean: clean$/;"	t
+info	Harl.cpp	/^void Harl::info() {$/;"	f	class:Harl	typeref:typename:void
+kActions_	Harl.cpp	/^const Harl::Action Harl::kActions_[4] = {$/;"	m	class:Harl	typeref:typename:const Harl::Action[4]
+kActions_	Harl.hpp	/^  static const Harl::Action kActions_[4];$/;"	m	class:Harl	typeref:typename:const Harl::Action[4]
+kLevels_	Harl.cpp	/^const std::string Harl::kLevels_[4] = {$/;"	m	class:Harl	typeref:typename:const std::string[4]
+kLevels_	Harl.hpp	/^  static const std::string kLevels_[4];$/;"	m	class:Harl	typeref:typename:const std::string[4]
+main	main.cpp	/^int main() {$/;"	f	typeref:typename:int
+re	Makefile	/^re: fclean all$/;"	t
+warning	Harl.cpp	/^void Harl::warning() {$/;"	f	class:Harl	typeref:typename:void

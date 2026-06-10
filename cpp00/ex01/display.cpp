@@ -1,6 +1,7 @@
 #include "display.hpp"
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 #include "validate.hpp"
 
 namespace display {
@@ -18,23 +19,34 @@ namespace display {
   }
 
   void DisplayBox(const std::string& str) {
-    std::string line = "-----------------------";
+    std::string line = "";
+    for (size_t i = 0; i < str.length(); ++i)
+      line += "-";
     std::cout << line << std::endl << str << std::endl << line << std::endl;
   }
 
   std::string ReadInput(const std::string& field) {
     std::string value = "";
-    while (!validate::IsNotEmpty(value)) {
+
+    while (true) {
       std::cout << field << ": ";
-      std::getline(std::cin, value); 
+      if (!std::getline(std::cin, value)) {
+        std::cout << "\nEOF" << std::endl;
+        std::exit(1); 
+      }
+      if (validate::IsNotEmpty(value))
+        return value;
     }
-    return value;
   }
 
   std::string ReadName(const std::string& field_name) {
     std::string input = ReadInput(field_name);
+
     while (!validate::IsValidName(input)) {
-      std::cout << "\nName must not exceed 20 characters, and may only contain alphabetic characters.\n" << std::endl;
+      std::cout
+        << "Name must not exceed 20 characters,"
+        <<  " and may only contain alphabetic characters!"
+        << std::endl;
       input = ReadInput(field_name);
     }
     return input;
@@ -42,8 +54,9 @@ namespace display {
 
   std::string ReadPhonenumber() {
     std::string input = ReadInput("phonenumber");
+
     while (!validate::IsValidPhonenumber(input)) {
-      std::cout << "\nInsert a valid phonenumber.\n" << std::endl;
+      std::cout << "Insert a valid phonenumber!" << std::endl;
       input = ReadInput("phonenumber");
     }
     return input;
@@ -51,11 +64,19 @@ namespace display {
 
   std::string ReadDarkSecret() {
     std::string input = ReadInput("dark secret");
+
     while (!validate::IsValidDarkSecret(input)) {
-      std::cout << "\nDark secret must not exceed 100 characters\n" << std::endl;
+      std::cout << "Dark secret must not exceed 100 characters!" << std::endl;
       input = ReadInput("dark secret");
     }
     return input;
+  }
+
+  int ReadIndex() {
+    std::string input = display::ReadInput("Index");
+
+    if (input.length() > 1) return -1;
+    return static_cast<unsigned char>(input[0])- '0';
   }
 
 }

@@ -1,4 +1,4 @@
-NAME			:= ex06
+NAME			:= harlFilter
 CXX				:= c++
 CXXFLAGS	:= -Wall -Werror -Wextra -std=c++98
 SRC				:= Harl.cpp main.cpp

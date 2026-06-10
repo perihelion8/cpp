@@ -25,15 +25,15 @@ IsNotEmpty	validate.cpp	/^  bool IsNotEmpty(const std::string& str) {$/;"	f	name
 IsValidDarkSecret	validate.cpp	/^  bool IsValidDarkSecret(const std::string& str) {$/;"	f	namespace:validate	typeref:typename:bool
 IsValidLength	validate.cpp	/^  bool IsValidLength(const std::string& str, size_t max_len) {$/;"	f	namespace:validate	typeref:typename:bool
 IsValidName	validate.cpp	/^  bool IsValidName(const std::string& str) {$/;"	f	namespace:validate	typeref:typename:bool
-IsValidPhoneNumber	validate.cpp	/^  bool IsValidPhoneNumber(const std::string& str) {$/;"	f	namespace:validate	typeref:typename:bool
+IsValidPhonenumber	validate.cpp	/^  bool IsValidPhonenumber(const std::string& str) {$/;"	f	namespace:validate	typeref:typename:bool
 NAME	Makefile	/^NAME		:= phonebook$/;"	m
 OBJ	Makefile	/^OBJ			:= $(SRC:.cpp=.o)$/;"	m
 PHONEBOOK_HPP	PhoneBook.hpp	/^#define PHONEBOOK_HPP$/;"	d
 PhoneBook	PhoneBook.cpp	/^PhoneBook::PhoneBook() {$/;"	f	class:PhoneBook
 PhoneBook	PhoneBook.hpp	/^class PhoneBook {$/;"	c
 ReadDarkSecret	display.cpp	/^  std::string ReadDarkSecret() {$/;"	f	namespace:display	typeref:typename:std::string
-ReadInput	display.cpp	/^  std::string ReadInput(const std::string& field) {$/;"	f	namespace:display	typeref:typename:std::string
-ReadName	display.cpp	/^  std::string ReadName(const std::string& name_type) {$/;"	f	namespace:display	typeref:typename:std::string
+ReadInput	display.cpp	/^  void ReadInput(const std::string& field, std::string& value) {$/;"	f	namespace:display	typeref:typename:void
+ReadName	display.cpp	/^  std::string ReadName(const std::string& field_name) {$/;"	f	namespace:display	typeref:typename:std::string
 ReadPhonenumber	display.cpp	/^  std::string ReadPhonenumber() {$/;"	f	namespace:display	typeref:typename:std::string
 SRC	Makefile	/^SRC			:= Contact.cpp PhoneBook.cpp display.cpp validate.cpp main.cpp$/;"	m
 SearchContacts	PhoneBook.cpp	/^void PhoneBook::SearchContacts() {$/;"	f	class:PhoneBook	typeref:typename:void
