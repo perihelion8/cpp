@@ -13,8 +13,7 @@ class Fixed {
 
  private:
    static const int kB_ = 8;
-
-   int n_;
+   int raw_bits_;
 
 };
 
