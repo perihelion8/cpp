@@ -13,7 +13,7 @@ void PhoneBook::AddContact() {
   contacts_[index_].set_nickname(display::ReadName("nickname"));
   contacts_[index_].set_phonenumber(display::ReadPhonenumber());
   contacts_[index_].set_darksecret(display::ReadDarkSecret());
-  if (index_ == kContactsSize_) is_full_ = true;
+  if (index_ == kContactsSize_ - 1) is_full_ = true;
   index_ = (index_ + 1) % kContactsSize_;
 }
 
