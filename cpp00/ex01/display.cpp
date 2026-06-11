@@ -19,10 +19,11 @@ namespace display {
   }
 
   void DisplayBox(const std::string& str) {
-    std::string line = "";
+    std::string line = "\n";
     for (size_t i = 0; i < str.length(); ++i)
       line += "-";
-    std::cout << line << std::endl << str << std::endl << line << std::endl;
+    line += "\n";
+    std::cout << line << str << line << std::endl;
   }
 
   std::string ReadInput(const std::string& field) {
