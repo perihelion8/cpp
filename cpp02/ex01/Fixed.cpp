@@ -46,7 +46,6 @@ int Fixed::toInt(void) const {
   return raw_bits_ >> kFractionalBits_;
 }
 
-
 std::ostream& operator<<(std::ostream& out, const Fixed& obj) {
     out << obj.toFloat();
     return out;
