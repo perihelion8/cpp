@@ -18,7 +18,7 @@ class PhoneBook {
   bool is_full_;
   int contacts_size_;
   int table_fields_;
-  Contact contacts_[8];
+  Contact contacts_[contacts_size_];
 };
 
 #endif
